@@ -62,6 +62,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.count1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sum1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,13 +74,11 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.count1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sum1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -401,6 +401,18 @@
             this.dataGridView2.Size = new System.Drawing.Size(495, 191);
             this.dataGridView2.TabIndex = 0;
             // 
+            // count1
+            // 
+            this.count1.HeaderText = "Количество, шт";
+            this.count1.Name = "count1";
+            this.count1.Width = 224;
+            // 
+            // sum1
+            // 
+            this.sum1.HeaderText = "Cумма, руб. коп.";
+            this.sum1.Name = "sum1";
+            this.sum1.Width = 224;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.dataGridView3);
@@ -491,6 +503,18 @@
             this.dataGridView5.Size = new System.Drawing.Size(495, 191);
             this.dataGridView5.TabIndex = 3;
             // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Обстоятельства";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 224;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Примечание";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 224;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(16, 673);
@@ -499,6 +523,7 @@
             this.button1.TabIndex = 32;
             this.button1.Text = "РАСШИФРОВКА ПОДПИСЕЙ";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -518,30 +543,7 @@
             this.button3.TabIndex = 34;
             this.button3.Text = "СБРОС";
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // count1
-            // 
-            this.count1.HeaderText = "Количество, шт";
-            this.count1.Name = "count1";
-            this.count1.Width = 224;
-            // 
-            // sum1
-            // 
-            this.sum1.HeaderText = "Cумма, руб. коп.";
-            this.sum1.Name = "sum1";
-            this.sum1.Width = 224;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Обстоятельства";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 224;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Примечание";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 224;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form1
             // 

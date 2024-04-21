@@ -14,9 +14,15 @@ namespace normalForm8
 {
     public partial class Form1 : Form
     {
-        string examplePath = "C:\\Users\\visua\\Desktop\\normalForm1\\unform8.xls";
-        string forCreatePath = "C:\\Users\\visua\\Desktop\\normalForm1\\finish.xls";
+        string examplePath = "C:\\Users\\TipaNick\\Desktop\\normalForm\\unform8.xls";
+        string forCreatePath = "C:\\Users\\TipaNick\\Desktop\\normalForm\\finish.xls";
         Spreadsheet spreadsheet = new Spreadsheet();
+        string employee1FIO = "";
+        string employee1Job = "";
+        string employee2FIO = "";
+        string employee2Job = "";
+        string employee3FIO = "";
+        string employee3Job = "";
         public Form1()
         {
             InitializeComponent();
@@ -46,9 +52,9 @@ namespace normalForm8
             //Отчетный период До 
             worksheet.Cell("BF14").Value = dateTimePicker3.Value.ToString("dd.MM.yyyy");
             //Мат лицо Должность
-            worksheet.Cell("U18").Value = textBox2.Text;
+            worksheet.Cell("U18").Value = comboBox1.Text.ToString();
             //Мат Лицо ФИО
-            worksheet.Cell("AM18").Value = comboBox1.Text.ToString();
+            worksheet.Cell("AM18").Value = textBox2.Text; 
             //Наименование
             int row = dataGridView1.Rows.Count - 1;
             for (int i = 0; i < row; i++)
@@ -98,6 +104,13 @@ namespace normalForm8
                 //Сумма
                 worksheet.Cell(27 + i, 69).Value = dataGridView5[1, i].Value;
             }
+            //Расшифровка подписей
+            worksheet.Cell("N65").Value = employee1Job;
+            worksheet.Cell("AQ65").Value = employee1FIO;
+            worksheet.Cell("N67").Value = employee2Job;
+            worksheet.Cell("AQ67").Value = employee2FIO;
+            worksheet.Cell("N69").Value = employee3Job;
+            worksheet.Cell("AQ69").Value = employee3FIO;
             //Сохранение файла
             if (File.Exists(forCreatePath))
             {
@@ -115,6 +128,34 @@ namespace normalForm8
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
             textBox4.Text = (comboBox3.SelectedIndex+1).ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 form2 = new Form2();
+            form2.ShowDialog();
+            employee1FIO = form2.employee1FIO;
+            employee1Job = form2.employee1Job;
+            employee2FIO = form2.employee2FIO;
+            employee2Job = form2.employee2Job;
+            employee3FIO = form2.employee3FIO;
+            employee3Job = form2.employee3Job;
+
+    }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+            dataGridView1.Rows.Clear();
+            dataGridView2.Rows.Clear();
+            dataGridView3.Rows.Clear();
+            dataGridView4.Rows.Clear();
+            dataGridView5.Rows.Clear();
+
+
         }
     }
 }
